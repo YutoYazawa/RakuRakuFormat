@@ -2,7 +2,7 @@
 //
 // Yuto.Yazawa (008900012151b5yr@gl.pen-kanagawa.ed.jp)
 //
-// This software is released under the MIT License, see LICENSE.txt.
+// This software is released under the MIT License, see LICENSE.
 
 #include <assert.h>
 #include <string.h>
@@ -28,6 +28,5 @@ char* extract(const char* target, size_t begin, size_t length, char* result, siz
         // 空文字列を返す
         result[0] = '\0';
     }
-
     return result;
 }
