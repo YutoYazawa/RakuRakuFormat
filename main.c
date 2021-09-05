@@ -14,7 +14,9 @@ int main(void){
 
 	FILE *fp;
 	char str[STR_SIZE+1];
+	char body[STR_SIZE-1];
 	char prefix[3];
+	char macro[5];
 
 	fp = fopen("入力.txt","r");
 	if (fp==NULL) {
@@ -23,9 +25,26 @@ int main(void){
 	}
 
 	while(fscanf(fp, "%s", str) != EOF) {
-		extract(str, 0, 2, prefix, sizeof(prefix));
-		if (strcmp(prefix,"##")==0) {
-			printf("タイトル！\n");
+		getstr(str, 0, 2, prefix, sizeof(prefix));
+		getstr(str, 2, STR_SIZE-2, body, sizeof(body));
+		if (!strcmp(prefix,"##")) {
+			printf("タイトル:%s\n", body);
+		}
+		else if (!strcmp(prefix,">>")) {
+			printf("発行人:%s\n", body);
+		}
+		else if (!strcmp(prefix,"<<")) {
+			printf("宛先:%s\n", body);
+		}
+		else if (!strcmp(prefix,"--")) {
+			printf("箇条書き:%s\n", body);
+		}
+		else if (!strcmp(prefix,"$$")) {
+			getstr(body, 0, 4, macro, sizeof(macro));
+			printf("マクロ名:%s\n",macro);
+		}
+		else {
+			printf("本文:%s\n", str);
 		}
 	}
 

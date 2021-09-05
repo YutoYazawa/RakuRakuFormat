@@ -7,7 +7,7 @@
 #include <assert.h>
 #include <string.h>
 
-char* extract(const char* target, size_t begin, size_t length, char* result, size_t result_size)
+char* getstr(const char* target, size_t begin, size_t length, char* result, size_t result_size)
 {
     assert(target != NULL);
     assert(result != NULL);
