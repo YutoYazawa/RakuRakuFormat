@@ -29,8 +29,8 @@ $$TIME
 ここが本文になります  
 
 ## ダウンロード
-まだリリースできる状態ではないのでまだありません...  
-少々お待ちください...
+やっとまともに動くようになったのでこちらです
+https://github.com/mdc-Sirasera/RakuRakuFormat/releases/latest
 
 ## 動作環境(予定)
 Windows 7,8,10 (64bit)  
